@@ -34,16 +34,18 @@
                 </button>
 
                 <!-- Branding Image -->
-                <a class="navbar-brand" href="{{ url('/') }}">
+                <a class="navbar-brand" href="{{ url('/home') }}">
                     {{ config('app.name', 'Laravel') }}
                 </a>
             </div>
 
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
                 <!-- Left Side Of Navbar -->
-                <ul class="nav navbar-nav">
-                    &nbsp;
-                </ul>
+<ul class="nav navbar-nav">
+    <li role="presentation" class="@if (url('/home') == url()->current()) active @endif"><a href="{{ url('/') }}">Home</a></li>
+    <li role="presentation" class="@if (url('/submit') == url()->current()) active @endif"><a href="{{ url('/submit') }}">Add link</a></li>
+    <li role="presentation" class="@if (url('/items') == url()->current()) active @endif"><a href="{{ url('/items') }}">See items</a></li>
+</ul>
 
                 <!-- Right Side Of Navbar -->
                 <ul class="nav navbar-nav navbar-right">
