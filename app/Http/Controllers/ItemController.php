@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Rating;
 use App\User;
 use App\Item;
+use App\Events\RateAdded;
 
 class ItemController extends Controller
 {
@@ -52,6 +53,8 @@ class ItemController extends Controller
         $rating->created_by = $user->id;
         $rating->modified_by = $user->id;
         $rating->save();
+
+        event(new RateAdded($rating));
 
         $request->session()->flash('rating_status', 'Rating was successful!');
         return redirect('/items');
