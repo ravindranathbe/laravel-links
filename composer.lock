@@ -650,16 +650,16 @@
         },
         {
             "name": "laravel/passport",
-            "version": "v1.0.6",
+            "version": "v1.0.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/passport.git",
-                "reference": "0d9b4e491792496c80a0753826c38824d3f65ae6"
+                "reference": "9c24790adb31f9c8c1bda71213e0a3dafdc0fc29"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/passport/zipball/0d9b4e491792496c80a0753826c38824d3f65ae6",
-                "reference": "0d9b4e491792496c80a0753826c38824d3f65ae6",
+                "url": "https://api.github.com/repos/laravel/passport/zipball/9c24790adb31f9c8c1bda71213e0a3dafdc0fc29",
+                "reference": "9c24790adb31f9c8c1bda71213e0a3dafdc0fc29",
                 "shasum": ""
             },
             "require": {
@@ -710,7 +710,7 @@
                 "oauth",
                 "passport"
             ],
-            "time": "2016-10-12 15:29:07"
+            "time": "2016-10-15 21:33:46"
         },
         {
             "name": "lcobucci/jwt",
