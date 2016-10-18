@@ -62,3 +62,7 @@ Route::get('/insert', function() {
 });
 
 Route::get('{locale}/langpage', 'LangController@index');
+
+Route::get('/session/get', 'SessController@getSess');
+Route::get('/session/put', 'SessController@putSess');
+Route::get('/session/forget', 'SessController@forgetSess');
