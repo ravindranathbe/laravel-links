@@ -12,6 +12,7 @@
 */
 
 use Illuminate\Http\Request;
+use App\Biodata;
 
 Route::get('/', function () {
     $links = \App\Link::all();
@@ -55,3 +56,9 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/items', 'ItemController@index');
     Route::get('/items/rate/{itemId}/{rateValue}', 'ItemController@rate');
 });
+
+Route::get('/insert', function() {
+    Biodata::create(['title' => 'Biodata test #1', 'description' => 'Biodata test #1 - Description']);
+});
+
+Route::get('{locale}/langpage', 'LangController@index');
