@@ -66,3 +66,7 @@ Route::get('{locale}/langpage', 'LangController@index');
 Route::get('/session/get', 'SessController@getSess');
 Route::get('/session/put', 'SessController@putSess');
 Route::get('/session/forget', 'SessController@forgetSess');
+
+Route::get('/form', function() {
+    return view('form');
+});
