@@ -74,3 +74,5 @@ Route::get('/form', function() {
 Route::match(['get', 'post'], '/fileup', 'FileupController@index');
 
 Route::match(['get', 'post'], '/form-validate', 'FormvalidateController@index');
+
+Route::match(['get', 'post'], '/mailsend', 'MailsendController@index');
