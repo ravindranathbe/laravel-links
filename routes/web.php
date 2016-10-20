@@ -70,3 +70,5 @@ Route::get('/session/forget', 'SessController@forgetSess');
 Route::get('/form', function() {
     return view('form');
 });
+
+Route::match(['get', 'post'], '/fileup', 'FileupController@index');
