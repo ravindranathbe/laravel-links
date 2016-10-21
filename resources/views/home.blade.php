@@ -8,6 +8,9 @@
                 <div class="panel-heading">Dashboard</div>
 
                 <div class="panel-body">
+
+<example></example>
+
 <!-- let people make clients -->
 <passport-clients></passport-clients>
 
