@@ -7,3 +7,4 @@ Homestead.yaml
 .env
 /public/js/app.js
 /public/css/*
+/public/css
