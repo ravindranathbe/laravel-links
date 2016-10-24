@@ -9,7 +9,9 @@
 
                 <div class="panel-body dashboard-body">
 
+<!--
 <example></example>
+-->
 
 <!-- let people make clients -->
 <passport-clients></passport-clients>
