@@ -82,6 +82,7 @@
 
     <div id="mainContent">
     @yield('content')
+    <p class="footer_p">@{{ vue_test_message }}</p>
     </div>
 
     <!-- Scripts -->

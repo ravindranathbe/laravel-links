@@ -31,5 +31,8 @@ Vue.component(
 );
 
 const app = new Vue({
-    el: '#mainContent'
+    el: '#mainContent',
+    data: {
+      vue_test_message: '\u00A9 2016. All rights reserved.'
+    }
 });
