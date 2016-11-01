@@ -55,6 +55,9 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::get('/items', 'ItemController@index');
     Route::get('/items/rate/{itemId}/{rateValue}', 'ItemController@rate');
+
+    // Routes related to notebooks
+    Route::get('/notebooks', 'NotebooksController@index');
 });
 
 Route::get('/insert', function() {

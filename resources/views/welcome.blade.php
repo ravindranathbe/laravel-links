@@ -75,13 +75,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Links App
-                </div>
-
-                <div class="links">
-                    @foreach ($links as $link) 
-                        {{ $link->title }}
-                    @endforeach
+                    Links App With Notebooks
                 </div>
             </div>
         </div>

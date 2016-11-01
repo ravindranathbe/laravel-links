@@ -42,9 +42,10 @@
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
                 <!-- Left Side Of Navbar -->
 <ul class="nav navbar-nav">
-    <li role="presentation" class="@if (url('/home') == url()->current()) active @endif"><a href="{{ url('/') }}">Home</a></li>
+    <li role="presentation" class="@if (url('/home') == url()->current()) active @endif"><a href="{{ url('/home') }}">Home</a></li>
     <li role="presentation" class="@if (url('/submit') == url()->current()) active @endif"><a href="{{ url('/submit') }}">Add link</a></li>
     <li role="presentation" class="@if (url('/items') == url()->current()) active @endif"><a href="{{ url('/items') }}">See items</a></li>
+    <li role="presentation" class="@if (url('/notebooks') == url()->current()) active @endif"><a href="{{ url('/notebooks') }}">Notebooks</a></li>
 </ul>
 
                 <!-- Right Side Of Navbar -->
