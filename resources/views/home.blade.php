@@ -1,9 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row">
-      <h1 class="text-center">L-Jira App</h1>
+<h1 class="page-header">L-Jira App</h1>
 <?php
 /*
         <div class="col-md-8 col-md-offset-2">
@@ -22,6 +20,4 @@
         </div>
 */
 ?>
-    </div>
-</div>
 @endsection
