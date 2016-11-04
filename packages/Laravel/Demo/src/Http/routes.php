@@ -1,16 +1,17 @@
 <?php
 use Illuminate\Http\Request;
 
-Route::get('demo/test', function () {
-    return 'Test';
-});
-
-Route::get('demo/hello', function () {
-    return Demo::hello();
-});
-
-Route::get('demo/c', 'Laravel\Demo\Http\DemoController@index');
-
-Route::get('demo/view', function () {
-    return view('laravel-demo::index');
+Route::group(['middleware' => ['web']], function () { // ['web', 'auth']
+    Route::group(['prefix' => 'demo'], function () {
+        Route::get('test', function () {
+            return 'Test';
+        });
+        Route::get('hello', function () {
+            return Demo::hello();
+        });
+        Route::get('view', function () {
+            return view('laravel-demo::index');
+        });
+        Route::get('c', 'Laravel\Demo\Http\DemoController@index');
+    });
 });
