@@ -88,7 +88,7 @@
         </div>
     </nav>
 
-    <div class="container-fluid">
+    <div class="container-fluid" id="mainContent">
       <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
           <ul class="nav nav-sidebar">
@@ -97,6 +97,26 @@
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
             @yield('content')
+            <!--div id="vueDemo">
+                <p>@{{ msg1 }}</p>
+                <p v-if="bool1">I am visible!</p>
+                <ul>
+                    <li v-for="arr1Item in arr1">@{{ arr1Item }}</li>
+                </ul>
+                <p>Button clicked for "<span v-bind:style="styleCnt">@{{ btnClickCnt }}</span>" times.</p>
+                <button v-on:click="sayHi">Click Me!</button>
+                <p><input type="text" v-model="msg2" /><br />
+                    Model data - msg2 <span>@{{ msg2 }}</span></p>
+
+                <div>
+                    <h1>Demo component</h1>
+                    <ol>
+                        <demo-component v-for="arritem in arr2" v-bind:arritem="arritem"></demo-component>
+                    </ol>
+                </div>
+                <todo-item v-for="todo in todos" v-bind:todo="todo"></todo-item>
+            </div-->
+
         </div>
       </div>
     </div>

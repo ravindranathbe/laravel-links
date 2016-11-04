@@ -30,9 +30,51 @@ Vue.component(
     require('./components/passport/PersonalAccessTokens.vue')
 );
 
+/*
+Vue.component('demo-component', {
+    props: ['arritem'],
+    template: '<li>{{ arritem }}</li>'
+    // props: ['todox'],
+    // template: '<li>{{ todox.text }}</li>'
+});
+
+Vue.component('todo-item', {
+  props: ['todo'],
+  template: '<li>{{ todo.text }}</li>'
+});
+*/
+
 const app = new Vue({
     el: '#mainContent',
     data: {
       vue_test_message: '\u00A9 2016. All rights reserved.'
     }
 });
+
+/*
+var appDemo = new Vue({
+    el: '#vueDemo',
+    data: {
+        msg1: 'Hello World!!!',
+        bool1: false,
+        arr1: ['One', 'Two', 'Three'],
+        arr2: ['One', 'Two', 'Three'],
+        btnClickCnt: 0,
+        styleCnt: 'color: #FF0000;',
+        msg2: 'Type something',
+        todos: [
+          { text: 'Learn JavaScript' },
+          { text: 'Learn Vue' },
+          { text: 'Build something awesome' }
+        ]
+    },
+    methods: {
+        sayHi: function() {
+            // alert('Hi!');
+            this.btnClickCnt += 1;
+        }
+    }
+});
+
+window.appDemo = appDemo;
+*/
