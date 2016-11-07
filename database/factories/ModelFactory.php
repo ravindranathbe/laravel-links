@@ -39,3 +39,10 @@ $factory->define(App\Item::class, function (Faker\Generator $faker) {
         'modified_by' => 1,
     ];
 });
+
+$factory->define(App\Blog::class, function (Faker\Generator $faker) {
+    return [
+        'title' => $faker->name,
+        'description' => $faker->paragraph,
+    ];
+});

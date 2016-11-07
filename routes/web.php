@@ -22,6 +22,11 @@ Route::get('/', function () {
     return view('home');
 });
 
+Route::group(['middleware' => 'web'], function () {
+    Route::get('/vuecrud', 'BlogController@vueCrud');
+    Route::resource('vueitems', 'BlogController');
+});
+
 // == Dummy routes
 /*
 Route::get('/', function () {
