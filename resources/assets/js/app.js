@@ -43,13 +43,14 @@ Vue.component('todo-item', {
   template: '<li>{{ todo.text }}</li>'
 });
 */
-
+/*
 const app = new Vue({
     el: '#mainContent',
     data: {
       vue_test_message: '\u00A9 2016. All rights reserved.'
     }
 });
+*/
 
 /*
 var appDemo = new Vue({
@@ -79,7 +80,6 @@ var appDemo = new Vue({
 window.appDemo = appDemo;
 */
 
-/*
 Vue.http.headers.common['X-CSRF-TOKEN'] = $('#token').attr('value');
 new Vue({
   // el: '#manage-vue',
@@ -97,7 +97,8 @@ new Vue({
     formErrors: {},
     formErrorsEdit: {},
     newItem: {'title': '', 'description': ''},
-    fillItem: {'title': '', 'description': '', id: ''}
+    fillItem: {'title': '', 'description': '', id: ''},
+    testTitle: 'DEBUG'
   },
   computed: {
     isActivated: function() {
@@ -124,19 +125,30 @@ new Vue({
     }
   },
   ready: function() {
-    console.log('debug');
+    this.getVueItems(this.pagination.current_page);
+  },
+  mounted: function() {
     this.getVueItems(this.pagination.current_page);
   },
   methods: {
     getVueItems: function(page) {
       this.$http.get('/vueitems?page='+page).then((response) => {
-        this.$set('items', response.data.data.data);
-        this.$set('pagination', response.data.pagination);
+        // this.$set(this, 'testTitle', response.data.data.data[0].title);
+        this.$set(this, 'items', response.data.data.data);
+        this.$set(this, 'pagination', response.data.pagination);
       });
     },
     createItem: function() {
 
+    },
+    editItem: function() {
+
+    },
+    deleteItem: function() {
+
+    },
+    changePage: function() {
+
     }
   }
 });
-*/

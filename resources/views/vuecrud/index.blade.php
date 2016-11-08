@@ -8,6 +8,11 @@
           <button type="button" data-toggle="modal" data-target="#create-item" class="btn btn-primary">Create new post</button>
         </div>
     </div>
+    <!--div class="row">
+      <div class="col-md-12">
+          <p>@{{ testTitle }}</p>
+      </div>
+    </div-->
     <div class="row">
       <div class="table-responsive">
         <table class="table table-borderless">
