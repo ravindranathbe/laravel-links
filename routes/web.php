@@ -27,6 +27,12 @@ Route::group(['middleware' => 'web'], function () {
     Route::resource('vueitems', 'BlogController');
 });
 
+/*
+Route::get('/vuecrud', 'BlogController@vueCrud');
+Route::resource('vueitems', 'BlogController');
+Route::post('/vueitems', 'BlogController@store');
+*/
+
 // == Dummy routes
 /*
 Route::get('/', function () {

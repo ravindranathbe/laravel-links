@@ -58,6 +58,15 @@ class BlogController extends Controller
             'description' => 'required',
         ]);
         $create = Blog::create($request->all());
+        /*
+        $create = [
+          'title' => 'DEBUG',
+          'description' => 'D',
+          'updated_at' => '2016-11-08 10:53:04',
+          'created_at' => '2016-11-08 10:53:04',
+          'id' => '51',
+        ];
+        */
         return response()->json($create);
     }
 

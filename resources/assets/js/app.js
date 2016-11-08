@@ -6,6 +6,7 @@
  */
 
 require('./bootstrap');
+window.toastr = require('toastr');
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -139,7 +140,20 @@ new Vue({
       });
     },
     createItem: function() {
-
+      var inp = this.newItem;
+      this.$http.post('/vueitems', inp).then((response) => {
+        this.changePage(this.pagination.current_page);
+        this.newItem = {
+          'title': '',
+          'description': ''
+        };
+        $('#create-item').modal('hide');
+        toastr.success('Post created!', 'Success Alert', {
+          timeout: 5000
+        });
+      }, (response) => {
+        this.formErrors = response.data;
+      });
     },
     editItem: function() {
 

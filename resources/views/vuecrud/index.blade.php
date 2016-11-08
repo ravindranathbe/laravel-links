@@ -60,7 +60,9 @@
             <h4 class="modal-title" id="myModalLabel">Create new post</h4>
           </div>
           <div class="modal-body">
-            <form class="" method="post" enctype="multipart/form-data" v.on:submit.prevent="createItem">
+            <form class="" method="post" enctype="multipart/form-data" v-on:submit.prevent="createItem">
+              <input type="hidden" name="_method" value="POST">
+              <input type="hidden" name="_token" value="{{ csrf_token() }}">
               <div class="form-group">
                 <label>Title: <input type="text" name="title" class="form-control" v-model="newItem.title" /></label>
                 <span v-if="formErrors['title']" class="error text-danger">@{{ formErrors['title'] }}</span>
@@ -88,7 +90,7 @@
             <h4 class="modal-title" id="myModalLabel">Edit post</h4>
           </div>
           <div class="modal-body">
-            <form class="" method="post" enctype="multipart/form-data" v.on:submit.prevent="updateItem(fillItem.id)">
+            <form class="" method="post" enctype="multipart/form-data" v-on:submit.prevent="updateItem(fillItem.id)">
               <div class="form-group">
                 <label>Title: <input type="text" name="title" class="form-control" v-model="fillItem.title" /></label>
                 <span v-if="formErrorsEdit['title']" class="error text-danger">@{{ formErrorsEdit['title'] }}</span>
