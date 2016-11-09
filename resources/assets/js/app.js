@@ -16,6 +16,7 @@ window.toastr = require('toastr');
 
 // Vue.component('example', require('./components/Example.vue'));
 
+/*
 Vue.component(
     'passport-clients',
     require('./components/passport/Clients.vue')
@@ -30,6 +31,7 @@ Vue.component(
     'passport-personal-access-tokens',
     require('./components/passport/PersonalAccessTokens.vue')
 );
+*/
 
 /*
 Vue.component('demo-component', {
@@ -81,6 +83,7 @@ var appDemo = new Vue({
 window.appDemo = appDemo;
 */
 
+/*
 Vue.http.headers.common['X-CSRF-TOKEN'] = $('#token').attr('value');
 new Vue({
   // el: '#manage-vue',
@@ -192,3 +195,4 @@ new Vue({
     }
   }
 });
+*/

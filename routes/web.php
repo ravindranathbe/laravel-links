@@ -13,10 +13,17 @@
 
 use Illuminate\Http\Request;
 // use App\Biodata;
-Auth::routes();
+// Auth::routes();
+
+Route::get('/', function() {
+  return 'Laravel App';
+});
+
+Route::resource('group', 'GroupController');
 
 // == App: L-Jira related routes
 
+/*
 // Home
 Route::get('/', function () {
     return view('home');
@@ -26,6 +33,7 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('/vuecrud', 'BlogController@vueCrud');
     Route::resource('vueitems', 'BlogController');
 });
+*/
 
 /*
 Route::get('/vuecrud', 'BlogController@vueCrud');

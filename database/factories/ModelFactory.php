@@ -46,3 +46,9 @@ $factory->define(App\Blog::class, function (Faker\Generator $faker) {
         'description' => $faker->paragraph,
     ];
 });
+
+$factory->define(App\Group::class, function (Faker\Generator $faker) {
+    return [
+        'name' => ucwords($faker->word),
+    ];
+});
