@@ -25,10 +25,10 @@
             <td>@{{ item.title }}</td>
             <td>@{{ item.description }}</td>
             <td>
-              <button class="btn edit-modal btn-warning" v-bind:click.prevent="editItem(item)">
+              <button class="btn edit-modal btn-warning" v-on:click.prevent="editItem(item)">
                 <span class="glyphicon glyphicon-edit"></span> Edit
               </button>
-              <button class="btn edit-modal btn-warning" v-bind:click.prevent="deleteItem(item)">
+              <button class="btn edit-modal btn-warning" v-on:click.prevent="deleteItem(item)">
                 <span class="glyphicon glyphicon-trash"></span> Delete
               </button>
             </td>
@@ -39,13 +39,13 @@
     <nav>
       <ul class="pagination">
         <li v-if="pagination.current_page > 1">
-          <a href="#" v-bind:click.prevent="changePage(pagination.current_page - 1)"><<</a>
+          <a href="#" v-on:click.prevent="changePage(pagination.current_page - 1)"><<</a>
         </li>
         <li v-for="page in pagesNumber">
-          <a href="#" v-bind:click.prevent="changePage(page)">@{{ page }}</a>
+          <a href="#" v-on:click.prevent="changePage(page)" v-bind:class="[page == isActivated ? 'active' : '']">@{{ page }}</a>
         </li>
         <li v-if="pagination.current_page < pagination.last_page">
-          <a href="#" v-bind:click.prevent="changePage(pagination.current_page + 1)">>></a>
+          <a href="#" v-on:click.prevent="changePage(pagination.current_page + 1)">>></a>
         </li>
       </ul>
     </nav>

@@ -161,8 +161,9 @@ new Vue({
     deleteItem: function() {
 
     },
-    changePage: function() {
-
+    changePage: function(page) {
+      this.pagination.current_page = page;
+      this.getVueItems(page);
     }
   }
 });
