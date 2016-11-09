@@ -155,11 +155,36 @@ new Vue({
         this.formErrors = response.data;
       });
     },
-    editItem: function() {
-
+    editItem: function(item) {
+      this.fillItem.title = item.title;
+      this.fillItem.id = item.id;
+      this.fillItem.description = item.description;
+      $('#edit-item').modal('show');
     },
-    deleteItem: function() {
-
+    updateItem: function(id) {
+      var inp = this.fillItem;
+      this.$http.put('/vueitems/' + id, inp).then((response) => {
+        this.changePage(this.pagination.current_page);
+        this.newItem = {
+          'title': '',
+          'description': '',
+          'id': ''
+        };
+        $('#edit-item').modal('hide');
+        toastr.success('Post updated!', 'Success Alert', {
+          timeout: 5000
+        });
+      }, (response) => {
+        this.formErrors = response.data;
+      });
+    },
+    deleteItem: function(item) {
+      this.$http.delete('/vueitems/' + item.id).then((response) => {
+        this.changePage(this.pagination.current_page);
+        toastr.success('Post deleted!', 'Success Alert', {
+          timeout: 5000
+        });
+      });
     },
     changePage: function(page) {
       this.pagination.current_page = page;

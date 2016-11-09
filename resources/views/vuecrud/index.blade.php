@@ -28,7 +28,7 @@
               <button class="btn edit-modal btn-warning" v-on:click.prevent="editItem(item)">
                 <span class="glyphicon glyphicon-edit"></span> Edit
               </button>
-              <button class="btn edit-modal btn-warning" v-on:click.prevent="deleteItem(item)">
+              <button class="btn edit-modal btn-danger" v-on:click.prevent="deleteItem(item)">
                 <span class="glyphicon glyphicon-trash"></span> Delete
               </button>
             </td>
