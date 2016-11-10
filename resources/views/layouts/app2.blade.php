@@ -47,7 +47,7 @@
       <div class="row" id="mainContent">
         <div class="col-sm-3 col-md-2 sidebar">
           <ul class="nav nav-sidebar">
-            <li class="active"><a href="#">Group <span class="sr-only">(current)</span></a></li>
+            <li class="active"><a href="{{ url('/group') }}">Group <span class="sr-only">(current)</span></a></li>
             <!--li><a href="#">Reports</a></li>
             <li><a href="#">Analytics</a></li>
             <li><a href="#">Export</a></li-->

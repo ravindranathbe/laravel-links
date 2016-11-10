@@ -18,6 +18,21 @@ class GroupController extends Controller
       return view('groups/index', ['groups' => $groups]);
     }
 
+    public function add(Request $request)
+    {
+      if($request->all()) {
+        $this->validate($request, [
+            'name' => 'required|min:5',
+        ]);
+
+        Group::create($request->all());
+
+        return redirect('group')->with('status', 'Group created!');
+      }
+
+      return view('groups/add');
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -25,7 +40,7 @@ class GroupController extends Controller
      */
     public function create()
     {
-        return view('groups/add');
+
     }
 
     /**
