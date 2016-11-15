@@ -52,3 +52,10 @@ $factory->define(App\Group::class, function (Faker\Generator $faker) {
         'name' => ucwords($faker->word),
     ];
 });
+
+$factory->define(App\Faq::class, function (Faker\Generator $faker) {
+    return [
+        'question' => $faker->realText(100, 2),
+        'answer' => $faker->realText(300, 3),
+    ];
+});

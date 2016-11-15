@@ -211,9 +211,45 @@ var vm = new Vue({
     message_title: 'Hello Vue!!!',
     show_desc: false,
     desc: 'Hi again!',
-    genres: ['Action', 'Romance', 'Thriller']
+    genres: ['Action', 'Romance', 'Thriller'],
+    questions: [],
+    answers: []
+  },
+  computed: {
+    c_txtUpper: function() {
+      return this.message.toUpperCase();
+    },
+    c_now: function() {
+      return Date.now();
+    }
+  },
+  mounted: function() {
+    this.getFaqItems();
+  },
+  updated: function() {
+    this.doFaqFunc();
   },
   methods: {
+    getFaqItems: function(page) {
+      this.$http.get('/faq?page=1').then((response) => {
+        this.$set(this, 'questions', response.data.data.questions);
+        this.$set(this, 'answers', response.data.data.answers);
+      });
+    },
+    doFaqFunc: function() {
+      $('p.faq_answer').hide();
+      $('p.faq_question a').click(function(e) {
+        e.preventDefault();
+        $('p.faq_answer').hide();
+        $(this).parent().next().show(1000);
+      });
+    },
+    m_txtUpper: function() {
+      return this.message.toUpperCase();
+    },
+    m_now: function() {
+      return Date.now();
+    },
     sayHello: function() {
       alert('Hello');
     },

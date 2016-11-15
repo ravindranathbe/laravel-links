@@ -1,11 +1,22 @@
 @extends('layouts.vue')
 
 @section('content')
-<div class="col-md-2">
+<div class="col-md-3">
 
 </div>
-<div class="col-md-8">
+<div class="col-md-6">
+  <h1>FAQ</h1>
+  <ol>
+    <li v-for="question in questions">
+      <p class="faq_question"><a href="#">@{{ question }}</a></p>
+      <p class="faq_answer">@{{ answers[1] }}</p>
+    </li>
+  </ol>
+</div>
+<!--div class="col-md-6">
   <h1 v-bind:title="message_title">@{{ message | toUpper }}</h1>
+  <p>Text upper by computed:: @{{ c_txtUpper }}</p>
+  <p>Text upper by method:: @{{ m_txtUpper() }}</p>
   <h2 v-once>@{{ message }}</h2>
   <h3 v-html="message"></h2>
   <transition name="fade">
@@ -29,8 +40,8 @@
   <p>
     <demo-comp v-bind:hellotxt="message2"></demo-comp>
   </p>
-</div>
-<div class="col-md-2">
+</div-->
+<div class="col-md-3">
 
 </div>
 @endsection

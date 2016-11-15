@@ -27,6 +27,8 @@ Route::get('vue-page', function() {
   return view('vue/page');
 });
 
+Route::get('faq', 'FaqController@index');
+
 // == App: L-Jira related routes
 
 /*
