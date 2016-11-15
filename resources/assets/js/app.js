@@ -205,6 +205,7 @@ Vue.component('demo-comp', {
 var vm = new Vue({
   el: '#mainContent',
   data: {
+    cnt: 0,
     message: 'Hello Vue!',
     message2: 'Hello Vue World!',
     message_title: 'Hello Vue!!!',
@@ -215,6 +216,13 @@ var vm = new Vue({
   methods: {
     sayHello: function() {
       alert('Hello');
+    },
+    cntUp: function() {
+      this.cnt += 1;
+    },
+    cntDown: function() {
+      if(this.cnt != 0)
+        this.cnt -= 1;
     }
   },
   filters: {
