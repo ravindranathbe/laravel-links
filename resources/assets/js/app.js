@@ -196,3 +196,31 @@ new Vue({
   }
 });
 */
+
+Vue.component('demo-comp', {
+  props: ['hellotxt'],
+  template: '<span>This is from demo component. {{ hellotxt }}</span>'
+});
+
+var vm = new Vue({
+  el: '#mainContent',
+  data: {
+    message: 'Hello Vue!',
+    message2: 'Hello Vue World!',
+    message_title: 'Hello Vue!!!',
+    show_desc: false,
+    desc: 'Hi again!',
+    genres: ['Action', 'Romance', 'Thriller']
+  },
+  methods: {
+    sayHello: function() {
+      alert('Hello');
+    }
+  },
+  filters: {
+    toUpper: function (value) {
+      return value.toUpperCase();
+  }
+}
+});
+window.vm = vm;

@@ -23,6 +23,10 @@ Route::get('group', 'GroupController@index');
 Route::match(['get', 'post'], 'group/add', 'GroupController@add');
 // Route::resource('group', 'GroupController');
 
+Route::get('vue-page', function() {
+  return view('vue/page');
+});
+
 // == App: L-Jira related routes
 
 /*

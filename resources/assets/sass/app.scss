@@ -86,3 +86,9 @@ p.footer_p {
 ul.pagination a.active {
   background-color: #cbb956;
 }
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s
+}
+.fade-enter, .fade-leave-active {
+  opacity: 0
+}
