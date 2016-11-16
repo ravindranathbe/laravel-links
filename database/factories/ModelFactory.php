@@ -59,3 +59,9 @@ $factory->define(App\Faq::class, function (Faker\Generator $faker) {
         'answer' => $faker->realText(300, 3),
     ];
 });
+
+$factory->define(App\Visit::class, function (Faker\Generator $faker) {
+    return [
+        'ip' => $faker->ipv4,
+    ];
+});
