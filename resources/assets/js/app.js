@@ -232,6 +232,11 @@ var vm = new Vue({
   updated: function() {
     this.doFaqFunc();
   },
+  watch: {
+    selQuestion: function(v) {
+      // alert(v);
+    }
+  },
   methods: {
     handleFaqChange: function() {
       var selIndex = _.findIndex(this.faqs, {id: this.selQuestion});
