@@ -6,12 +6,23 @@
 </div>
 <div class="col-md-6">
   <h1>FAQ</h1>
-  <ol>
+  <!--ol>
     <li v-for="question in questions">
       <p class="faq_question"><a href="#">@{{ question }}</a></p>
       <p class="faq_answer">@{{ answers[1] }}</p>
     </li>
-  </ol>
+  </ol-->
+  <div class="form-group">
+    <label for="question">Question</label>
+    <select class="form-control faq_question" id="question" v-model="selQuestion" v-on:change="handleFaqChange">
+      <option>Select question</option>
+      <option v-for="faq in faqs" v-bind:value="faq.id">@{{ faq.question }}</option>
+    </select>
+    <p>Selected question ID: @{{ selQuestion }}.</p>
+  </div>
+  <div class="form-group faq_answer">
+    <p>@{{ selAnswer }}</p>
+  </div>
 </div>
 <!--div class="col-md-6">
   <h1 v-bind:title="message_title">@{{ message | toUpper }}</h1>

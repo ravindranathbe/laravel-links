@@ -11,10 +11,12 @@ class FaqController extends Controller
   {
       $questions = [];
       $answers = [];
+      $faqs = [];
       $items = Faq::latest()->paginate(10);
       foreach ($items as $item) {
         array_push($questions, $item['question']);
         array_push($answers, $item['answer']);
+        array_push($faqs, ['id' => $item['id'], 'question' => $item['question'], 'answer' => $item['answer']]);
       }
 
       $response = [
@@ -26,7 +28,7 @@ class FaqController extends Controller
               'from' => $items->firstItem(),
               'to' => $items->lastItem(),
           ],
-          'data' => ['questions' => $questions, 'answers' => $answers],
+          'data' => ['questions' => $questions, 'answers' => $answers, 'faqs' => $faqs],
       ];
 
       return response()->json($response);

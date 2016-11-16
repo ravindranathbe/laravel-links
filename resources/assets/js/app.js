@@ -213,7 +213,10 @@ var vm = new Vue({
     desc: 'Hi again!',
     genres: ['Action', 'Romance', 'Thriller'],
     questions: [],
-    answers: []
+    answers: [],
+    faqs: [],
+    selQuestion: 0,
+    selAnswer: ''
   },
   computed: {
     c_txtUpper: function() {
@@ -230,11 +233,24 @@ var vm = new Vue({
     this.doFaqFunc();
   },
   methods: {
+    handleFaqChange: function() {
+      var selIndex = _.findIndex(this.faqs, {id: this.selQuestion});
+      if(selIndex == -1) {
+        this.selAnswer = '';
+      } else {
+        this.selAnswer = this.faqs[selIndex].answer;
+      }
+    },
     getFaqItems: function(page) {
       this.$http.get('/faq?page=1').then((response) => {
         this.$set(this, 'questions', response.data.data.questions);
         this.$set(this, 'answers', response.data.data.answers);
+        this.$set(this, 'faqs', response.data.data.faqs);
       });
+    },
+    setQuestion: function(id) {
+      console.log(id);
+      this.selQuestion = id;
     },
     doFaqFunc: function() {
       $('p.faq_answer').hide();
