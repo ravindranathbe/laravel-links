@@ -289,3 +289,11 @@ var vm = new Vue({
 }
 });
 window.vm = vm;
+
+// === ECHO codes
+/*
+Echo.channel('page-visited')
+    .listen('PageVisited', (e) => {
+        console.log(e.visit.ip);
+    });
+*/

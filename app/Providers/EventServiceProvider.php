@@ -21,6 +21,9 @@ class EventServiceProvider extends ServiceProvider
         'App\Events\RateAdded' => [
             'App\Listeners\SendRatedNotification',
         ],
+        'App\Events\PageVisited' => [
+            'App\Listeners\SendPageVisitedNotification',
+        ],
     ];
 
     /**

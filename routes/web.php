@@ -14,6 +14,8 @@
 use Illuminate\Http\Request;
 // use App\Biodata;
 // Auth::routes();
+use App\Visit;
+use App\Events\PageVisited;
 
 Route::get('/', function() {
   return 'Laravel App';
@@ -28,6 +30,20 @@ Route::get('vue-page', function() {
 });
 
 Route::get('faq', 'FaqController@index');
+
+Route::get('visit', function(Request $request) {
+  $ip = $request->ip();
+  $visitId = DB::table('visits')->insertGetId(
+    ['ip' => $ip, 'created_at' => \Carbon\Carbon::now()->toDateTimeString(), 'updated_at' =>  \Carbon\Carbon::now()->toDateTimeString()]
+  );
+  $visit = Visit::findOrFail($visitId);
+  event(new PageVisited($visit));
+  return view('vue/visit');
+});
+
+Route::get('pusher', function() {
+  return view('vue/pusher');
+});
 
 // == App: L-Jira related routes
 
