@@ -84,6 +84,8 @@ Route::get('pusher', function() {
   return view('vue/pusher');
 });
 
+Route::match(['get', 'post'], 'timeline', 'TimelineController@index');
+
 // == App: L-Jira related routes
 
 /*

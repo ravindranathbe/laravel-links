@@ -65,3 +65,10 @@ $factory->define(App\Visit::class, function (Faker\Generator $faker) {
         'ip' => $faker->ipv4,
     ];
 });
+
+$factory->define(App\Timeline::class, function (Faker\Generator $faker) {
+    return [
+        'comment' => $faker->paragraph,
+        'author' => $faker->name
+    ];
+});
