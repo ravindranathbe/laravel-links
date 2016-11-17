@@ -25,9 +25,8 @@ class SendPageVisitedNotification
      * @param  PageVisited  $event
      * @return void
      */
-    // public function handle(PageVisited $event)
-    public function handle($data)
+    public function handle(PageVisited $event)
     {
-        // Log::info('Page visit from: '.$event->visitArray['ip']);
+        Log::info('Page visit from: '.$event->visit['ip']);
     }
 }

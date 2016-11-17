@@ -32,15 +32,50 @@ Route::get('vue-page', function() {
 Route::get('faq', 'FaqController@index');
 
 Route::get('visit', function(Request $request) {
+  $data = ['message' => 'Hello'];
+  // event(new PageVisited($data));
+
+  // /////////////
+  /*
+  $options = array(
+      'cluster' => 'eu',
+      'encrypted' => false
+  );
+  $pusher = new Pusher(
+      'e0c21b59af80214dbd51',
+      'de1567f2935b83f07a44',
+      '270845',
+      $options
+  );
+
+  $data['message'] = 'hello world';
+  $pusher->trigger('test_channel', 'my_event', $data);
+  return 'Pushed data! - test 2';
+  */
+  // /////////////
+
+  /*
+  // New Pusher instance with our config data
+  $pusher = new \Pusher(config('broadcasting.connections.pusher.key'), config('broadcasting.connections.pusher.secret'), config('broadcasting.connections.pusher.app_id'), config('broadcasting.connections.pusher.options'));
+
+  // Your data that you would like to send to Pusher
+  $data = ['text' => 'hello world from Laravel 5.3'];
+
+  // Sending the data to channel: "test_channel" with "my_event" event
+  $pusher->trigger( 'test_channel', 'my_event', $data);
+  return 'Pushed data! - test';
+  */
+
   $ip = $request->ip();
   $visitId = DB::table('visits')->insertGetId(
     ['ip' => $ip, 'created_at' => \Carbon\Carbon::now()->toDateTimeString(), 'updated_at' =>  \Carbon\Carbon::now()->toDateTimeString()]
   );
   $visit = Visit::findOrFail($visitId);
+  event(new PageVisited($visit));
 
-  $data = ['message' => 'Hello'];
-  // event(new PageVisited($visit));
-  event(new PageVisited($data));
+  // $data = ['message' => 'Hello'];
+  // event(new PageVisited($data));
+
   echo 'Pushed data!';
   // return view('vue/visit');
 });

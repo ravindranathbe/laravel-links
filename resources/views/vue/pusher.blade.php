@@ -19,20 +19,21 @@
       //instantiate a Pusher object with our Credential's key
       var pusher = new Pusher('e0c21b59af80214dbd51', {
           cluster: 'eu',
-          encrypted: false
+          encrypted: true
       });
 
       //Subscribe to the channel we specified in our Laravel Event
       var channel = pusher.subscribe('test_channel');
 
       //Bind a function to a Event (the full Laravel class)
-      channel.bind('page_visited', addMessage);
+      // channel.bind('\\App\\Events\\PageVisited', addMessage);
+      channel.bind('test_event', addMessage);
 
       function addMessage(data) {
         console.log(data);
-        var listItem = $("<li class='list-group-item'></li>");
-        listItem.html(data.message);
-        $('#messages').prepend(listItem);
+        // var listItem = $("<li class='list-group-item'></li>");
+        // listItem.html(data.message);
+        // $('#messages').prepend(listItem);
       }
     </script>
   </body>
