@@ -287,5 +287,5 @@ window.vm = vm;
 /* ECHO codes */
 Echo.channel('timeline_channel')
   .listen('CommentAdded', (e) => {
-    console.log(e);
+    $('.timelineItems').prepend('<li><p class="bg-info">' + e.timeline.comment + '</p><p class="text-right text-info">by <i>' + e.timeline.author + '</i></p></li>')
   });

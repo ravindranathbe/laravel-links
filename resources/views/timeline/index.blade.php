@@ -32,7 +32,7 @@
   </div>
 
   <div class="row">
-    <ul>
+    <ul class="timelineItems">
     @foreach($timelines as $timeline)
       <li>
         <p class="bg-info">{{ $timeline['comment'] }}</p>
