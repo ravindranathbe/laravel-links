@@ -37,8 +37,12 @@ Route::get('visit', function(Request $request) {
     ['ip' => $ip, 'created_at' => \Carbon\Carbon::now()->toDateTimeString(), 'updated_at' =>  \Carbon\Carbon::now()->toDateTimeString()]
   );
   $visit = Visit::findOrFail($visitId);
-  event(new PageVisited($visit));
-  return view('vue/visit');
+
+  $data = ['message' => 'Hello'];
+  // event(new PageVisited($visit));
+  event(new PageVisited($data));
+  echo 'Pushed data!';
+  // return view('vue/visit');
 });
 
 Route::get('pusher', function() {

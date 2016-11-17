@@ -22,11 +22,13 @@ class PageVisited implements ShouldBroadcast
      *
      * @return void
      */
-    public function __construct(Visit $visit)
+    // public function __construct(Visit $visit)
+    public function __construct($data)
     {
         // $this->visit = ''; // $visit;
         // $this->visitArray = $visit->toArray();
-        $this->message = 'Hello';
+        // $this->message = 'Hello';
+        $this->message = $data['message'];
     }
 
     /**
@@ -37,8 +39,7 @@ class PageVisited implements ShouldBroadcast
     public function broadcastOn()
     {
       // return ['test_channel'];
-      return new PresenceChannel('test_channel');
-      // return new PrivateChannel('page-visited');
       // return new PresenceChannel('test_channel');
+      return new PrivateChannel('test_channel');
     }
 }
