@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Timeline;
+use App\Events\CommentAdded;
 
 class TimelineController extends Controller
 {
@@ -17,7 +18,9 @@ class TimelineController extends Controller
         'author.required' => 'The author field is required',
       ]);
 
-      Timeline::create($request->all());
+      $timeline = Timeline::create($request->all());
+
+      event(new CommentAdded($timeline));
     }
 
     $timelines = Timeline::latest()->get()->toArray();

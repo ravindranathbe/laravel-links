@@ -14,7 +14,7 @@ window.toastr = require('toastr');
  * the application, or feel free to tweak this setup for your needs.
  */
 
-// Vue.component('example', require('./components/Example.vue'));
+/* Vue.component('example', require('./components/Example.vue')); */
 
 /*
 Vue.component(
@@ -37,8 +37,6 @@ Vue.component(
 Vue.component('demo-component', {
     props: ['arritem'],
     template: '<li>{{ arritem }}</li>'
-    // props: ['todox'],
-    // template: '<li>{{ todox.text }}</li>'
 });
 
 Vue.component('todo-item', {
@@ -74,7 +72,6 @@ var appDemo = new Vue({
     },
     methods: {
         sayHi: function() {
-            // alert('Hi!');
             this.btnClickCnt += 1;
         }
     }
@@ -86,7 +83,6 @@ window.appDemo = appDemo;
 /*
 Vue.http.headers.common['X-CSRF-TOKEN'] = $('#token').attr('value');
 new Vue({
-  // el: '#manage-vue',
   el: '#mainContent',
   data: {
     items: [],
@@ -137,7 +133,6 @@ new Vue({
   methods: {
     getVueItems: function(page) {
       this.$http.get('/vueitems?page='+page).then((response) => {
-        // this.$set(this, 'testTitle', response.data.data.data[0].title);
         this.$set(this, 'items', response.data.data.data);
         this.$set(this, 'pagination', response.data.pagination);
       });
@@ -234,7 +229,6 @@ var vm = new Vue({
   },
   watch: {
     selQuestion: function(v) {
-      // alert(v);
     }
   },
   methods: {
@@ -290,10 +284,8 @@ var vm = new Vue({
 });
 window.vm = vm;
 
-// === ECHO codes
-/*
-Echo.channel('page-visited')
-    .listen('PageVisited', (e) => {
-        console.log(e.visit.ip);
-    });
-*/
+/* ECHO codes */
+Echo.channel('timeline_channel')
+  .listen('CommentAdded', (e) => {
+    console.log(e);
+  });

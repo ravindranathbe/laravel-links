@@ -24,6 +24,9 @@ class EventServiceProvider extends ServiceProvider
         'App\Events\PageVisited' => [
             'App\Listeners\SendPageVisitedNotification',
         ],
+        'App\Events\CommentAdded' => [
+            'App\Listeners\SendCommentAddedNotification',
+        ],
     ];
 
     /**
