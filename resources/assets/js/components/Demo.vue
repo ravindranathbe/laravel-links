@@ -24,7 +24,7 @@ export default {
   data() {
       return {
           data1: 'd1',
-          firstName: '',
+          firstName: 'ABC',
           lastName: ''
       };
   },
