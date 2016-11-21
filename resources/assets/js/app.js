@@ -197,6 +197,16 @@ Vue.component('demo-comp', {
   template: '<span>This is from demo component. {{ hellotxt }}</span>'
 });
 
+Vue.component('demo', require('./components/Demo.vue'));
+Vue.component('demoa', require('./components/Demoa.vue'));
+/*
+Vue.component('demoa', {
+  props: ['firstName'],
+  template: '<p>Demo 2 component {{ firstName }}</p>'
+});
+*/
+Vue.component('demo-child', require('./components/Demo-Child.vue'));
+
 var vm = new Vue({
   el: '#mainContent',
   data: {
@@ -285,7 +295,9 @@ var vm = new Vue({
 window.vm = vm;
 
 /* ECHO codes */
+/*
 Echo.channel('timeline_channel')
   .listen('CommentAdded', (e) => {
     $('.timelineItems').prepend('<li><p class="bg-info">' + e.timeline.comment + '</p><p class="text-right text-info">by <i>' + e.timeline.author + '</i></p></li>')
   });
+*/
