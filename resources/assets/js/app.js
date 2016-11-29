@@ -14,6 +14,15 @@ window.toastr = require('toastr');
  * the application, or feel free to tweak this setup for your needs.
  */
 
+ // Todo app codes - start
+
+Vue.component('todo', require('./components/Todo.vue'));
+window.todo = new Vue({
+  el: '#mainContent'
+});
+
+ // Todo app codes - end
+
 /* Vue.component('example', require('./components/Example.vue')); */
 
 /*
@@ -191,7 +200,7 @@ new Vue({
   }
 });
 */
-
+/*
 Vue.component('demo-comp', {
   props: ['hellotxt'],
   template: '<span>This is from demo component. {{ hellotxt }}</span>'
@@ -199,14 +208,17 @@ Vue.component('demo-comp', {
 
 Vue.component('demo', require('./components/Demo.vue'));
 Vue.component('demoa', require('./components/Demoa.vue'));
+*/
+
 /*
 Vue.component('demoa', {
   props: ['firstName'],
   template: '<p>Demo 2 component {{ firstName }}</p>'
 });
 */
-Vue.component('demo-child', require('./components/Demo-Child.vue'));
+// Vue.component('demo-child', require('./components/Demo-Child.vue'));
 
+/*
 var vm = new Vue({
   el: '#mainContent',
   data: {
@@ -293,6 +305,7 @@ var vm = new Vue({
 }
 });
 window.vm = vm;
+*/
 
 /* ECHO codes */
 /*

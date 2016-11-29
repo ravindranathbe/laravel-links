@@ -29,6 +29,10 @@ Route::get('vue-page', function() {
   return view('vue/page');
 });
 
+Route::get('todo', function() {
+  return view('vue/todo');
+});
+
 Route::get('faq', 'FaqController@index');
 
 Route::get('visit', function(Request $request) {
@@ -85,6 +89,8 @@ Route::get('pusher', function() {
 });
 
 Route::match(['get', 'post'], 'timeline', 'TimelineController@index');
+
+Route::match(['get', 'post'], 'todos', 'TodoController@index');
 
 // == App: L-Jira related routes
 
